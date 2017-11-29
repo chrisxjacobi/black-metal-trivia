@@ -29,6 +29,15 @@ header {
 .hero-text-box {
     text-align: center;
     margin-top: 30%;
+    color: rgba(0, 0, 0, 0.72);
+}
+
+#start-button{
+    font-family: 'Arizonia', cursive;    
+    font-size: 150%;
+    color: rgba(235, 235, 235, 0.85);
+    text-decoration: none;
+    margin-top: 50%;
 }
 
 h1 {
