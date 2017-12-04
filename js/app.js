@@ -58,6 +58,12 @@ $(document).ready(function () {
     var selections = [];
     var counter;
 
+    var loadQuestion = () => {
+        for (var i = 0; i < questions.length; i++) {
+            $(".question-area").html(questions[current].question);
+        };
+
+    };
 
     $(".question-area").hide();
     $(".image-area").hide();
@@ -67,20 +73,23 @@ $(document).ready(function () {
     $("#start-button").click(function () {
         $(".hero-text-box").fadeOut("slow", function () {
             $(".question-area").fadeIn("slow", function () {
+                loadQuestion();
+            });
 
-                $(this).html('hello');
+            $(".image-area").fadeIn("slow", function () {
+                $(this).html("<img id='PBJ' src='http://assets.teamrock.com/image/423100e0-1c69-4917-91e4-e9d44fca2aba?w=800' />");
+            });
+            $("#counter").fadeIn("slow", function () {
 
-                $(".image-area").fadeIn("slow", function () {
-                    $(this).html("<img id='PBJ' src='http://assets.teamrock.com/image/423100e0-1c69-4917-91e4-e9d44fca2aba?w=800' />");
-                });
-                $("#counter").fadeIn("slow", function () {
-
-                });
-                $("#next").fadeIn(3000, function () {});
-
+            });
+            $("#next").fadeIn(3000, function () {
 
             });
         });
+    });
+
+    $("#next").click(function () {
+        $(this).html('yo!');
     });
 });
 
