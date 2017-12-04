@@ -73,8 +73,7 @@ header {
     color: rgba(235, 235, 235, 0.85);
     text-decoration: none;
     background: none;
-    border: 5px solid black;
-    border-radius: 5px;
+    border: none;
 }
 
 .image-area {
