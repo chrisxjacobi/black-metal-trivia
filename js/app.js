@@ -53,11 +53,10 @@ $(document).ready(function () {
     }
 ];
 
-
     var current = 0;
     var questionCounter = 0;
     var selections = [];
-
+    var counter;
 
 
     $(".question-area").hide();
@@ -67,58 +66,51 @@ $(document).ready(function () {
 
     $("#start-button").click(function () {
         $(".hero-text-box").fadeOut("slow", function () {
-            
-            displayQuestion();
-            
-            $(".image-area").fadeIn("slow", function () {
-                $(this).html("<img id='PBJ' src='http://assets.teamrock.com/image/423100e0-1c69-4917-91e4-e9d44fca2aba?w=800' />");
-            });
-            $("#counter").fadeIn("slow", function () {});
-            $("#next").fadeIn(3000, function () {});
-
-
-        });
-
-        var displayQuestion = () => {
             $(".question-area").fadeIn("slow", function () {
-                var q = questions[current];
-                $(this).html(q.question);
-                
-                for (var i = 0; i < q.answers.length; i++) {
-                    $(".question-area").html("q.answers[i]");
-                }
+
+                $(this).html('hello');
+
+                $(".image-area").fadeIn("slow", function () {
+                    $(this).html("<img id='PBJ' src='http://assets.teamrock.com/image/423100e0-1c69-4917-91e4-e9d44fca2aba?w=800' />");
+                });
+                $("#counter").fadeIn("slow", function () {
+
+                });
+                $("#next").fadeIn(3000, function () {});
+
 
             });
-        }
-
-        //        function displayCurrentQuestion() {
-        //
-        //            var question = questions[currentQuestion].question;
-        //            var questionClass = $(document).find(".quizContainer > .question");
-        //            var choiceList = $(document).find(".quizContainer > .choiceList");
-        //            var numChoices = questions[currentQuestion].choices.length;
-        //
-        //            // Set the questionClass text to the current question
-        //            $(questionClass).text(question);
-        //
-        //            // Remove all current <li> elements (if any)
-        //            $(choiceList).find("li").remove();
-        //
-        //            var choice;
-        //            for (i = 0; i < numChoices; i++) {
-        //                choice = questions[currentQuestion].choices[i];
-        //                $('<li><input type="radio" value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
-        //            }
-        //        }
-
-
-
+        });
     });
-
-
 });
+
+//        var displayQuestion = () => {
+//            $(".question-area").fadeIn("slow", function () {
+//                $(".question-area").text(questions.question);
+//        });
+//        }
+
+//        function displayCurrentQuestion() {
+//
+//            var question = questions[currentQuestion].question;
+//            var questionClass = $(document).find(".quizContainer > .question");
+//            var choiceList = $(document).find(".quizContainer > .choiceList");
+//            var numChoices = questions[currentQuestion].choices.length;
+//
+//            // Set the questionClass text to the current question
+//            $(questionClass).text(question);
+//
+//            // Remove all current <li> elements (if any)
+//            $(choiceList).find("li").remove();
+//
+//            var choice;
+//            for (i = 0; i < numChoices; i++) {
+//                choice = questions[currentQuestion].choices[i];
+//                $('<li><input type="radio" value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
+//            }
+//        }
 
 
 
 // put in function for starting game
-// put in function for submit/finishing game
+// put in function for submit/finishing game}
