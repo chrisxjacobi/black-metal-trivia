@@ -20,6 +20,7 @@ html {
     margin: 0 auto;
 }
 
+
 /*start page*/
 
 header {
@@ -35,13 +36,14 @@ header {
     color: rgba(0, 0, 0, 0.72);
 }
 
-#start-button{
-    font-family: 'Arizonia', cursive;    
+#start-button {
+    font-family: 'Arizonia', cursive;
     font-size: 150%;
     color: rgba(235, 235, 235, 0.85);
     text-decoration: none;
     margin-top: 50%;
 }
+
 
 /*page with questions*/
 
@@ -55,20 +57,33 @@ header {
 }
 
 .question-area {
-    display: none;
     background-color: rgba(18, 18, 18, 0.7);
     color: rgba(235, 235, 235, 0.85);
     text-align: center;
     margin: 5% 5%;
 }
 
+#next {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    font-family: 'Arizonia', cursive;
+    font-size: 200%;
+    color: rgba(235, 235, 235, 0.85);
+    text-decoration: none;
+    background: none;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
 .image-area {
     float: right;
 }
+
 .box img {
     position: relative;
     width: 100%;
     height: auto;
     margin: 5% 5%;
 }
-
