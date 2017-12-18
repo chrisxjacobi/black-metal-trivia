@@ -1,20 +1,23 @@
     var panel = $('#question-area');
     var countStartNumber = 30;
 
-    $(document).on('click', '#start-button', function (e) {
+    $(".question-area").hide();
+    $(".image-area").hide();
+    $("#counter-start").hide()
+
+    $(document).on('click', '#start-button', function () {
         $('#counter-start').prepend('<h5>Time Remaining: <span id="counter-number">30</span> Seconds</h5>');
-        $(".question-area").hide();
-        $(".image-area").hide();
-        $("#counter-start").hide()
 
         $(".hero-text-box").fadeOut("slow", function () {
-            $("#counter-start").fadeIn("slow", function () {
-
-            });
+            $("#counter-start").fadeIn();
+            $("#question-area").fadeIn();
             game.displayQuestion();
-
         });
 
+    });
+
+    $(document).on('click', '.answer-button', function (e) {
+        game.clicked(e);
     });
 
 
@@ -88,13 +91,12 @@
         },
         displayQuestion: function () {
             timer = setInterval(game.countdown, 1000);
-            panel.fadeIn();
             panel.html('<p>' + questions[this.currentQuestion].question + '</p>');
+
             for (var i = 0; i < questions[this.currentQuestion].answers.length; i++) {
                 panel.append('<button class="answer-button" id="button"' + 'data-name="' + questions[this.currentQuestion].answers[i] + '">' + questions[this.currentQuestion].answers[i] + '</button>');
-            };
+            }
         },
-
         timeUp: function () {
             clearInterval(timer);
             $('#counter-number').html(game.counter);
@@ -107,33 +109,5 @@
             } else {
                 setTimeout(game.nextQuestion, 3 * 1000);
             }
-        },
-
-
+        }
     };
-
-
-    //        function displayCurrentQuestion() {
-    //
-    //            var question = questions[currentQuestion].question;
-    //            var questionClass = $(document).find(".quizContainer > .question");
-    //            var choiceList = $(document).find(".quizContainer > .choiceList");
-    //            var numChoices = questions[currentQuestion].choices.length;
-    //
-    //            // Set the questionClass text to the current question
-    //            $(questionClass).text(question);
-    //
-    //            // Remove all current <li> elements (if any)
-    //            $(choiceList).find("li").remove();
-    //
-    //            var choice;
-    //            for (i = 0; i < numChoices; i++) {
-    //                choice = questions[currentQuestion].choices[i];
-    //                $('<li><input type="radio" value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
-    //            }
-    //        }
-
-
-
-    // put in function for starting game
-    // put in function for submit/finishing game}
