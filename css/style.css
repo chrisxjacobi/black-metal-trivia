@@ -36,7 +36,7 @@ header {
     color: rgba(0, 0, 0, 0.72);
 }
 
-#start-button, .submit {
+#start-button {
     font-family: 'Arizonia', cursive;
     font-size: 150%;
     color: rgba(235, 235, 235, 0.85);
@@ -58,7 +58,7 @@ header {
     text-align: center;
 }
 
-.question-area {
+#question-area {
     background-color: rgba(18, 18, 18, 0.7);
     color: rgba(235, 235, 235, 0.85);
     text-align: center;
