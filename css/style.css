@@ -18,6 +18,7 @@ html {
 .row {
     max-width: 1140px;
     margin: 0 auto;
+    max-height: 100%;
 }
 
 
@@ -27,13 +28,14 @@ header {
     background-image: url(images/hero.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100%;
 }
 
 .hero-text-box {
     text-align: center;
     margin-top: 30%;
     color: rgba(0, 0, 0, 0.72);
+    padding-bottom: 50%
 }
 
 #start-button {
@@ -53,31 +55,48 @@ header {
     display: none;
     background-color: rgba(18, 18, 18, 0.7);
     color: rgba(235, 235, 235, 0.85);
-    padding: 6%;
+    padding: 3%;
     font-size: 200%;
     text-align: center;
 }
 
-#question-area {
+#question-area, #score-area {
     background-color: rgba(18, 18, 18, 0.7);
     color: rgba(235, 235, 235, 0.85);
-    text-align: center;
     margin: 5% 5%;
+    text-align: left;
+    padding: 20px;
 }
 
-#next {
-    display: block;
-    margin: 0 auto;
-    position: relative;
+#score-area {
     text-align: center;
-    font-family: 'Arizonia', cursive;
-    font-size: 200%;
+    font-size: 150%;
+    width: 100%;
+    height: 100vh;
+}
+
+input {
+    padding-top: 15px;
+    
+}
+
+#submit-button {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 180%;
     color: rgba(235, 235, 235, 0.85);
     text-decoration: none;
-    background: none;
+    margin-left: 45%;
+    background-color: transparent;
     border: none;
+    padding-top: 20px;
+    transition: color 0.5s;
 }
 
+#submit-button:hover {
+    color: #8A0707;
+}
+
+/*
 .image-area {
     float: right;
 }
@@ -88,3 +107,4 @@ header {
     height: auto;
     margin: 5% 5%;
 }
+*/
