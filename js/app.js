@@ -196,6 +196,15 @@ var game = {
         gameDiv.hide();
 
         endDiv.html('<h1>Finished</h1>');
+        
+        if (this. correct === 10) {
+            endDiv.append('<h3>You are TRVE KVLT black metal!</h3>');
+        } else if (this.correct < 10 && this.correct >= 5) {
+            endDiv.append('<h3>We welcome you through the gates of Valhalla!</h3>');
+        } else if (this.correct < 5) {
+            endDiv.append('<h3>You have disappointed the gods :(</h3>');
+        }
+        
         endDiv.append('<p>Correct: ' + this.correct + '</p>');
         endDiv.append('<h4>Incorrect: ' + this.incorrect + '</h4>');
         endDiv.append('<h4>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h4>');

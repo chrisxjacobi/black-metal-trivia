@@ -1,3 +1,7 @@
+/*black text color: rgba(0, 0, 0, 0.72);*/
+/*blood red text color: #8A0707*/
+/*white text color: rgba(235, 235, 235, 0.85);*/
+
 /*default styles*/
 
 * {
@@ -73,15 +77,27 @@ header {
     font-size: 150%;
     margin-top: 30%;
     margin-bottom: 50%;
+    color: rgba(235, 235, 235, 0.85);
+
 }
 
 p {
     padding-top: 3%;
+    padding-bottom: 2%;
 }
 
 input {
     padding-top: 15px;
+    margin-right: 7px;
     
+}
+
+h3 {
+    font-size: 140%;
+    color: rgba(0, 0, 0, 0.72);
+    margin-top: 4%;
+    margin-bottom: 4%;
+
 }
 
 #submit-button, .replay-button {
