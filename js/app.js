@@ -213,7 +213,7 @@ var game = {
             endDiv.append('<h3>You have disappointed the gods :(</h3>');
         }
 
-        endDiv.append('<p>Correct: ' + this.correct + '</p>');
+        endDiv.append('<h4>Correct: ' + this.correct + '</h4>');
         endDiv.append('<h4>Incorrect: ' + this.incorrect + '</h4>');
         endDiv.append('<h4>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h4>');
         endDiv.append('<button class="replay-button" value="Reload Page" onClick="document.location.reload(true)">Try again?</button>')

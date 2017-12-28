@@ -1,0 +1,47 @@
+/*--------------------*/
+
+
+/*---MEDIA SCREENS----*/
+
+
+/*--------------------*/
+
+
+/* from big tablet to widths smaller than a 1140px row */
+
+@media only screen and (max-width: 1200px) {}
+
+
+/* small tablet to big tablet: from 768px to 1023px */
+
+@media only screen and (max-width: 1023px) {}
+
+
+/* small phones to small tablets: from 481px to 767px */
+
+@media only screen and (max-width: 767px) {
+    #submit-button {
+        margin-left: 35%;
+    }
+    #submit-button, .replay-button, h4 {
+        font-size: 28px;;
+    }
+    p {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 22px;
+    }
+    h1, h3 {
+        font-size: 1em;
+    }
+}
+
+
+/* small phones: from 0 to 480px */
+
+@media only screen and (max-width: 480px) {
+    #submit-button {
+        margin-left: 2%;
+    }
+}
