@@ -71,8 +71,12 @@ header {
 #score-area {
     text-align: center;
     font-size: 150%;
-    width: 100%;
-    height: 100vh;
+    margin-top: 30%;
+    margin-bottom: 50%;
+}
+
+p {
+    padding-top: 3%;
 }
 
 input {
@@ -80,7 +84,7 @@ input {
     
 }
 
-#submit-button {
+#submit-button, #replay-button {
     font-family: 'IM Fell English SC', serif;
     font-size: 180%;
     color: rgba(235, 235, 235, 0.85);
@@ -93,6 +97,10 @@ input {
 }
 
 #submit-button:hover {
+    color: #8A0707;
+}
+
+#replay-button:hover {
     color: #8A0707;
 }
 

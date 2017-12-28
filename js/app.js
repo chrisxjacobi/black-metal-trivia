@@ -81,7 +81,7 @@ var game = {
     correct: 0,
     incorrect: 0,
     currentQuestion: 0,
-    counter: 99,
+    counter: 9,
     countdown: function () {
         game.counter--;
         $('#counter-number').html(game.counter);
@@ -162,17 +162,39 @@ var game = {
                 game.incorrect++;
             }
         });
+        $.each($("input[name='question-8']:checked"), function () {
+            if ($(this).val() == questions[8].correctAnswer) {
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+        $.each($("input[name='question-9']:checked"), function () {
+            if ($(this).val() == questions[9].correctAnswer) {
+                game.correct++;
+            } else {
+                game.incorrect++;
+            }
+        });
+       
 
         this.result();
+    },
+    timeUp: function () {
+        clearInterval(timer);
+        $("#counter-start").hide();
+        gameDiv.hide();
     },
     result: function () {
         clearInterval(timer);
         $("#counter-start").hide();
+        gameDiv.hide();
 
         endDiv.html('<h1>Finished</h1>');
         endDiv.append('<p>Correct: ' + this.correct + '</p>');
         endDiv.append('<h4>Incorrect: ' + this.incorrect + '</h4>');
         endDiv.append('<h4>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h4>');
+        endDiv.append('<button id="replay-button">Try again?</button>')
     }
 };
 
