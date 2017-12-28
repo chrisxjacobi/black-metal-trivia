@@ -182,7 +182,7 @@ var game = {
     },
     timeUp: function () {
         clearInterval(timer);
-        gameDiv.prepend('<button id="try-button">Try again?</button>');
+        gameDiv.prepend('<button class="replay-button" value="Reload Page" onClick="history.go(0)">Try again?</button>');
 
         document.getElementsByTagName("p").style.display = "none";
 
@@ -198,9 +198,9 @@ var game = {
         endDiv.append('<p>Correct: ' + this.correct + '</p>');
         endDiv.append('<h4>Incorrect: ' + this.incorrect + '</h4>');
         endDiv.append('<h4>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h4>');
-        endDiv.append('<button id="replay-button">Try again?</button>')
-        
-        
+        endDiv.append('<button class="replay-button" value="Reload Page" onClick="history.go(0)">Try again?</button>')
+
+
     }
 };
 
