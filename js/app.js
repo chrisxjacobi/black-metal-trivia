@@ -1,11 +1,14 @@
+// variables way to grab these game areas
 var gameDiv = $("#question-area");
 var endDiv = $("#score-area");
 
+// initial page load
 $("#question-area").hide();
 $("#score-area").hide();
 $("#image-area").hide();
 $("#counter-start").hide();
 
+// question area load on start button click
 $(document).on('click', '#start-button', function () {
     $('#counter-start').prepend('<h5>Time Remaining: <span id="counter-number">99</span> Seconds</h5>');
 
@@ -23,7 +26,7 @@ $(document).on('click', '#submit-button', function (e) {
     game.done();
 });
 
-
+// game questions
 var questions = [
     {
         question: "I: Who is the frontman for Emperor?",
@@ -77,11 +80,14 @@ var questions = [
     }
 ];
 
+//game object, with all necessary logic
 var game = {
     correct: 0,
     incorrect: 0,
     currentQuestion: 0,
     counter: 99,
+
+    // when timer runs out, execute code to allow player to attempt game again
     countdown: function () {
         game.counter--;
         $('#counter-number').html(game.counter);
@@ -91,9 +97,10 @@ var game = {
             game.timeUp();
         }
     },
+
+    // begin timer and loop through questions array to display questions, possible answers, and radio buttons for user to select an answer
     start: function () {
         timer = setInterval(game.countdown, 1000);
-
 
         for (var i = 0; i < questions.length; i++) {
             gameDiv.append('<p>' + questions[i].question + '</p>');
@@ -102,8 +109,9 @@ var game = {
             }
         }
         gameDiv.append('<button id="submit-button">SUBMIT</button>');
-
     },
+
+    // checking whether the user selected a correct answer, incorrect answer, or no answer
     done: function () {
 
         $.each($("input[name='question-0']:checked"), function () {
@@ -177,52 +185,37 @@ var game = {
             }
         });
 
-
         this.result();
     },
+
+    // when timer runs out, the counter is cleared, a 'try again' button is displayed, and the page 'submit' button is disabled.
     timeUp: function () {
         clearInterval(timer);
         $("#counter-start").append('<button class="replay-button" value="Reload Page" onClick="history.go(0)">Try again?</button>');
-        
-        
+
         document.getElementById('submit-button').disabled = true;
         document.getElementById('submit-button').textContent = '';
-
-
     },
+
+    // display game results in a new div, allowing player to choose to play again
     result: function () {
         clearInterval(timer);
         $("#counter-start").hide();
         gameDiv.hide();
-
         endDiv.html('<h1>Finished</h1>');
-        
-        if (this. correct === 10) {
+
+        // text display based on user score
+        if (this.correct === 10) {
             endDiv.append('<h3>You are TRVE KVLT black metal!</h3>');
         } else if (this.correct < 10 && this.correct >= 5) {
             endDiv.append('<h3>We welcome you through the gates of Valhalla!</h3>');
         } else if (this.correct < 5) {
             endDiv.append('<h3>You have disappointed the gods :(</h3>');
         }
-        
+
         endDiv.append('<p>Correct: ' + this.correct + '</p>');
         endDiv.append('<h4>Incorrect: ' + this.incorrect + '</h4>');
         endDiv.append('<h4>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h4>');
         endDiv.append('<button class="replay-button" value="Reload Page" onClick="history.go(0)">Try again?</button>')
-
-
     }
 };
-
-
-
-//    done: function () {
-//        $.each($("input[name='question-0']:checked"), function () {
-//            if ($(this).val() == questions[0].correctAnswer) {
-//                game.correct++;
-//            } else {
-//                game.incorrect++;
-//            }
-//        });
-//    };
-//};
