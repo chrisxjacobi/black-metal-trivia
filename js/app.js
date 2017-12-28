@@ -191,7 +191,7 @@ var game = {
     // when timer runs out, the counter is cleared, a 'try again' button is displayed, and the page 'submit' button is disabled.
     timeUp: function () {
         clearInterval(timer);
-        $("#counter-start").append('<button class="replay-button" value="Reload Page" onClick="location.reload(true)">Try again?</button>');
+        $("#counter-start").append('<button class="replay-button" value="Reload Page" onClick="document.location.reload(true)">Try again?</button>');
 
         document.getElementById('submit-button').disabled = true;
         document.getElementById('submit-button').textContent = '';
@@ -216,6 +216,6 @@ var game = {
         endDiv.append('<p>Correct: ' + this.correct + '</p>');
         endDiv.append('<h4>Incorrect: ' + this.incorrect + '</h4>');
         endDiv.append('<h4>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h4>');
-        endDiv.append('<button class="replay-button" value="Reload Page" onClick="location.reload(true)">Try again?</button>')
+        endDiv.append('<button class="replay-button" value="Reload Page" onClick="document.location.reload(true)">Try again?</button>')
     }
 };
