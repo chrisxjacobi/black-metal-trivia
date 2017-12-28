@@ -87,8 +87,8 @@ var game = {
         $('#counter-number').html(game.counter);
 
         if (game.counter === 0) {
-            console.log('TIME UP');
-            game.done();
+            console.log('Time up');
+            game.timeUp();
         }
     },
     start: function () {
@@ -176,14 +176,18 @@ var game = {
                 game.incorrect++;
             }
         });
-       
+
 
         this.result();
     },
     timeUp: function () {
         clearInterval(timer);
-        $("#counter-start").hide();
-        gameDiv.hide();
+        gameDiv.prepend('<button id="try-button">Try again?</button>');
+
+        document.getElementsByTagName("p").style.display = "none";
+
+
+
     },
     result: function () {
         clearInterval(timer);
@@ -195,6 +199,8 @@ var game = {
         endDiv.append('<h4>Incorrect: ' + this.incorrect + '</h4>');
         endDiv.append('<h4>Unanswered: ' + (questions.length - (this.incorrect + this.correct)) + '</h4>');
         endDiv.append('<button id="replay-button">Try again?</button>')
+        
+        
     }
 };
 
