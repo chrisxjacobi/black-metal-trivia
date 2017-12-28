@@ -81,7 +81,7 @@ var game = {
     correct: 0,
     incorrect: 0,
     currentQuestion: 0,
-    counter: 9,
+    counter: 99,
     countdown: function () {
         game.counter--;
         $('#counter-number').html(game.counter);
@@ -182,10 +182,11 @@ var game = {
     },
     timeUp: function () {
         clearInterval(timer);
-        gameDiv.prepend('<button class="replay-button" value="Reload Page" onClick="history.go(0)">Try again?</button>');
-
-        document.getElementsByTagName("p").style.display = "none";
-
+        $("#counter-start").append('<button class="replay-button" value="Reload Page" onClick="history.go(0)">Try again?</button>');
+        
+        
+        document.getElementById('submit-button').disabled = true;
+        document.getElementById('submit-button').textContent = '';
 
 
     },
